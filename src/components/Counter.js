@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 function Counter(){
-    const [count, setCount] = useState(2);
+    const [count, setCount] = useState();
 
    function handleNumberChange(e){
-        setCount(e.target.value);       
+        setCount(parseInt(e.target.value));       
     }
     
     return(
         <div>
             <h1>Test</h1>
-            <p>Le compteur est à : {count}</p>
+            <p>Le compteur que tu as choisi est : {count}</p>
             
             <button onClick={() => setCount(count+1)}>
                 +1
@@ -18,7 +18,7 @@ function Counter(){
             <button onClick={() => setCount(count-1)}>
                 -1
             </button><br />
-            <input type="text" value={count} onChange={handleNumberChange} placeholder="Ecris ton numéro !" />
+            <input type="number" value={count} onChange={handleNumberChange} placeholder="Ecris ton numéro !" />
         </div>
     );
 
